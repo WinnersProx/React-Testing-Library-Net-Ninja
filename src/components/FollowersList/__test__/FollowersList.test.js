@@ -2,7 +2,7 @@ import { fireEvent, render, screen } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
 import FollowersList from "../FollowersList";
 
-const MockTodoFooter = ({ numberOfIncompleteTasks }) => (
+const MockFollowersList = () => (
     <BrowserRouter>
       <FollowersList />
     </BrowserRouter>
@@ -12,7 +12,7 @@ const MockTodoFooter = ({ numberOfIncompleteTasks }) => (
 describe("Followers List component", () => {
 
     it("should render followers list and access one follower item", async () => {
-        render(<MockTodoFooter />);
+        render(<MockFollowersList />);
 
         const followerItemElement = await screen.findByTestId("follower-item-0");
 
@@ -20,7 +20,7 @@ describe("Followers List component", () => {
     });
 
     it("should render followers list and access multiple follower items", async () => {
-        render(<MockTodoFooter />);
+        render(<MockFollowersList />);
         const followerItems = await screen.findAllByTestId(/follower-item/i);
 
         expect(followerItems.length).toBeTruthy();
