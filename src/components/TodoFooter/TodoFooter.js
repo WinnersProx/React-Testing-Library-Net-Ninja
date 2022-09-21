@@ -6,8 +6,8 @@ function TodoFooter({
     numberOfIncompleteTasks
 }) {
     return (
-        <div className="todo-footer">
-            <p>{numberOfIncompleteTasks} {numberOfIncompleteTasks === 1 ? "task" : "tasks"} left</p>
+        <div className="todo-footer" data-testid="footer-paragraph" >
+            <p data-tasks-nbr={numberOfIncompleteTasks}>{numberOfIncompleteTasks} {numberOfIncompleteTasks === 1 ? "task" : "tasks"} left</p>
             <Link to="/followers">Followers</Link>
         </div>
     )
